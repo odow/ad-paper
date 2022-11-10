@@ -1,8 +1,8 @@
-import CSV
-import DataFrames
-import JSON
-import Plots
-import Statistics
+# Copyright (c) 2022: Oscar Dowson and contributors
+#
+# Use of this source code is governed by an MIT-style license that can be found
+# in the LICENSE.md file or at https://opensource.org/licenses/MIT.
+
 
 function plot_solved(plot, data; name, label)
     labels = ["ASL", "CasADi", "Gravity", "JuMP", "SymbolicAD"]
@@ -100,23 +100,3 @@ function plot_princetonlib(data, field)
     end
     return plt
 end
-
-plot_comparisons(
-    "opf-solve.md",
-    [
-        "JuMP NL" => "ASL",
-        "CasADi" => "CasADi",
-        "OPOMO" => "Gravity",
-        "JuMP" => "JuMP",
-        "JuMP SymAD" => "SymbolicAD",
-    ],
-)
-
-
-plot_comparisons(
-    "opf-callbacks.md",
-    [
-        "JuMP" => "JuMP",
-        "JuMP SymAD" => "SymbolicAD",
-    ],
-)
